@@ -1,0 +1,52 @@
+{% extends "food/base.html" %}
+
+
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4  offset-md-4">
+            <div class="card">
+                <div class="card-header bg-info">
+                    <div class="card-title">
+                <h2>Registeration form</h2>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        
+<!-- to get an access to each field of the form we use for loop -->
+
+                        {% for i in form %}
+                            <div class="form-group">
+                                {{ i.name }}
+                                <br>
+                                {{i}}
+                            </div>
+                            
+                        {% endfor %}
+                            <br>
+                        <!-- {{ form.as_p }} -->
+                        <input class="btn bg-info" type="submit" value="Signup">
+                        <!-- <button class="btn bg-info" type="submit">Login</button> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+{% endblock body %}
+    
+
+
+<!-- <form  method="post">
+    {% csrf_token %}
+    <div class="container">
+        {{form.as_p}}
+    </div>
+    
+    <input type="submit" value="Signup">
+</form> -->

@@ -1,0 +1,50 @@
+{% extends "food/base.html" %}
+
+    {% block body %}
+
+    
+    {% for i in item_list %}
+
+        <div class="row">
+            <div class="col-md-3 offset-md-2"> 
+                <img class="card" height="150px" src="{{ i.item_image }}" alt="">
+            </div>
+            <div class="col-md-2 offset-md-2">
+                <h3>{{ i.item_name }}</h3>
+                <h5>{{ i.item_desc }}</h5>
+                <h5>${{ i.item_price }}</h5>
+                <h6>{{ i.user_name }}</h6>
+            </div>
+
+            <div class="col-md-2">
+               <a href="{% url 'food:detail' i.id %}" class="btn btn-success">Details</a>
+            </div>
+        </div>
+        
+    {% endfor %}
+
+    {% endblock body %}
+
+
+
+
+
+
+
+
+
+
+<!-- this is old cod -->
+    <!-- <h1>This is a Template</h1>
+    
+    {% for i in item_list %}
+        <ul>
+            <li>
+                
+                <a href="{% url 'food:detail' i.id %}">{{i.id}} - {{i.item_name}}</a>
+            </li>
+        </ul>
+    {% endfor %} -->
+
+
+        
